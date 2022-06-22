@@ -1,6 +1,7 @@
 body {
   margin: unset;
   padding: unset;
+  background-color: var(--theme-blue);
 }
 
 a {

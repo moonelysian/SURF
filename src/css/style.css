@@ -22,9 +22,10 @@
   }
 }
 
-.nav {
+.page {
   display: flex;
   width: 100%;
+  height: 100vh;
   padding: 10px;
   background: var(--theme-blue);
 }
