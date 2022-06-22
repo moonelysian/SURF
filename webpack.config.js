@@ -21,9 +21,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "project",
+      title: "SURF!",
       template: "./index.html",
       inject: "body",
+      favicon: 'src/image/favicon.png',
     }),
     new MiniCssExtractPlugin({ filename: "style.css" }),
   ],
@@ -32,6 +33,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+      {
+        test: /\.png$/,
+        type: 'asset/inline'
+      },
+      {
+        test: /\.svg$/,
+        type: 'asset/inline'
       },
     ],
   },

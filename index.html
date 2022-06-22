@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
 
-<head>
-    <title>
-        <%= htmlWebpackPlugin.options.title %>
-    </title>
-</head>
-
-<body>
-
-</body>
-
+  <body>
+    <div class="nav">
+      <div></div>
+      <div class="logo-section">
+        <img class="logo" src="<%=require('./src/image/s.png') %>" />
+        <img class="logo" src="<%=require('./src/image/u.png') %>" />
+        <img class="logo" src="<%=require('./src/image/r.png') %>" />
+        <img class="logo" src="<%=require('./src/image/f.png') %>" />
+      </div>
+      <div></div>
+    </div>
+  </body>
 </html>
