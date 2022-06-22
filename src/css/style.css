@@ -26,7 +26,7 @@
   display: flex;
   width: 100%;
   padding: 10px;
-  background: #2666ae;
+  background: var(--theme-blue);
 }
 
 .logo-section {
