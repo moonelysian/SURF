@@ -27,17 +27,17 @@
   display: flex;
   width: 100%;
   height: 100vh;
-  padding: 10px;
   background: var(--theme-blue);
 }
 .page:nth-of-type(2),
 .page:nth-of-type(4) {
   background: #f7f9f9;
 }
+
 .page:nth-of-type(2),
 .page:nth-of-type(3),
 .page:nth-of-type(4) {
-  border-top: #000 solid 8px;
+  border-top: #000 solid 12px;
 }
 
 /* logo */
@@ -46,7 +46,7 @@
 }
 .logo {
   display: inline-block;
-  width: 80px;
+  width: 100px;
   -webkit-animation: wave-text 1s ease-in-out infinite;
   animation: wave-text 1s ease-in-out infinite;
 }
