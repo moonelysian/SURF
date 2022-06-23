@@ -3,7 +3,7 @@
     transform: translateY(0em);
   }
   60% {
-    transform: translateY(-0.6em);
+    transform: translateY(-1.5em);
   }
   100% {
     transform: translateY(0em);
@@ -15,7 +15,7 @@
     transform: translateY(0em);
   }
   60% {
-    transform: translateY(-0.6em);
+    transform: translateY(-1.5em);
   }
   100% {
     transform: translateY(0em);
@@ -38,6 +38,10 @@
 .page:nth-of-type(3),
 .page:nth-of-type(4) {
   border-top: #000 solid 12px;
+}
+
+.page:nth-of-type(3) {
+  position: relative;
 }
 
 /* logo */
@@ -73,6 +77,7 @@
   width: 100px;
   line-height: 90vh;
   height: 100vh;
+  z-index: 100;
 }
 .index {
   width: 24px;
@@ -87,4 +92,9 @@
 }
 .index-icon.active {
   fill: var(--theme-orange);
+}
+
+.member {
+  bottom: 0;
+  position: absolute;
 }
