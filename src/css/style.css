@@ -9,6 +9,14 @@
     transform: translateY(0em);
   }
 }
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 @keyframes wave-text {
   00% {
@@ -20,6 +28,23 @@
   100% {
     transform: translateY(0em);
   }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+*.hidden {
+  display: none !important;
+}
+*.appear {
+  animation: fade-in 1s;
+  animation-fill-mode: forwards;
 }
 
 /* page */
@@ -54,21 +79,61 @@
   -webkit-animation: wave-text 1s ease-in-out infinite;
   animation: wave-text 1s ease-in-out infinite;
 }
-.logo-section img:nth-of-type(1) {
+.logo-section img:nth-of-type(2) {
   -webkit-animation-delay: 0s;
   animation-delay: 0s;
 }
-.logo-section img:nth-of-type(2) {
+.logo-section img:nth-of-type(3) {
   -webkit-animation-delay: 0.1s;
   animation-delay: 0.1s;
 }
-.logo-section img:nth-of-type(3) {
+.logo-section img:nth-of-type(4) {
   -webkit-animation-delay: 0.2s;
   animation-delay: 0.2s;
 }
-.logo-section img:nth-of-type(4) {
+.logo-section img:nth-of-type(5) {
   -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
+}
+.logo-section img:nth-of-type(6) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+.logo-section img:nth-of-type(7) {
+  margin-left: -20px;
+}
+
+.smile {
+  position: absolute;
+  width: 80px;
+}
+.smile:nth-of-type(1) {
+  top: 40vh;
+  left: 30vw;
+  transform: rotate(-30deg);
+}
+.smile:nth-of-type(2) {
+  top: 30vh;
+  right: 30vw;
+  transform: rotate(15deg);
+}
+.smile:nth-of-type(3) {
+  bottom: 30vh;
+  right: 20vw;
+  transform: rotate(-26deg);
+}
+.smile:nth-of-type(4) {
+  bottom: 42vh;
+  left: 20vw;
+  transform: rotate(75deg);
+}
+.smile:nth-of-type(5) {
+  bottom: 50vh;
+  right: 21vw;
+}
+.smile:nth-of-type(6) {
+  bottom: 32vh;
+  right: 50vw;
 }
 
 /* index */
@@ -92,6 +157,29 @@
 }
 .index-icon.active {
   fill: var(--theme-orange);
+}
+
+/* 체크리스트 */
+.checklist {
+  width: 400px;
+  height: 400px;
+  background-color: var(--theme-light-orange);
+  border: #000 solid 8px;
+  margin: 100px;
+}
+.checklist-item {
+  display: flex;
+  align-items: center;
+  padding-left: 28px;
+}
+.checklist-item p {
+  margin-left: 10px;
+}
+.check-icon {
+  stroke: unset;
+}
+.check-icon.checked {
+  stroke: #000;
 }
 
 .member {

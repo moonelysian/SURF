@@ -7,3 +7,7 @@ body {
 a {
   text-decoration: unset;
 }
+
+div {
+  cursor: url('/src/image/surf.svg'), auto;
+}
