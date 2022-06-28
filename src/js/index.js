@@ -19,9 +19,11 @@ const handleScroll = currentScrollY => {
 };
 
 const handleClick = dataset => {
+  console.log(startPoint, dataset);
   if (!dataset) {
     return;
   }
+
   const clickedIndex = dataset - 1;
   if (clickedIndex !== startPoint) {
     window.scroll({ top: pageHight * clickedIndex, behavior: 'smooth' });
@@ -58,8 +60,8 @@ const handleChecklist = target => {
 };
 
 window.addEventListener('wheel', () => handleScroll(window.scrollY));
-indicatorSection.addEventListener('click', event =>
-  handleClick(Number(event.target.dataset['index'])),
-);
+indicatorSection.addEventListener('click', event => {
+  handleClick(Number(event.target.dataset['index']));
+});
 logoSection.addEventListener('click', handleLogo);
 checklist.addEventListener('click', e => handleChecklist(e.target));

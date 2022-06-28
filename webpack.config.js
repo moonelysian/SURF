@@ -24,7 +24,7 @@ module.exports = {
       title: "SURF!",
       template: "./index.html",
       inject: "body",
-      favicon: 'src/image/favicon.png',
+      favicon: './src/image/favicon.png',
     }),
     new MiniCssExtractPlugin({ filename: "style.css" }),
   ],
@@ -42,8 +42,12 @@ module.exports = {
         test: /\.jpeg$/,
         type: 'asset/inline'
       },
-        {
+      {
         test: /\.svg$/,
+        type: 'asset/inline'
+      },
+      {
+        test: /\.gif$/,
         type: 'asset/inline'
       },
     ],

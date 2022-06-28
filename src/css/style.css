@@ -29,12 +29,67 @@
     transform: translateY(0em);
   }
 }
-
 @keyframes fade-in {
   from {
     opacity: 0;
   }
   to {
+    opacity: 1;
+  }
+}
+@keyframes shake-text {
+  00% {
+    transform: translateX(0em);
+  }
+  60% {
+    transform: translateX(-1.5em);
+  }
+  100% {
+    transform: translateX(0em);
+  }
+}
+@keyframes fall-down-right {
+  00% {
+    opacity: 0.1;
+    transform: translateY(-1em);
+  }
+  30% {
+    opacity: 0.5;
+  }
+  60% {
+    transform: translate(30vw, 60vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(100vh);
+  }
+}
+@keyframes fall-down-left {
+  00% {
+    opacity: 0.5;
+    transform: translateY(-1em);
+  }
+  60% {
+    transform: translate(-10px, 30vh);
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+}
+@keyframes fall-left-right {
+  00% {
+    opacity: 0.5;
+    transform: translateY(-1em);
+  }
+  30% {
+    transform: translate(-50px, 30vh);
+  }
+  60% {
+    transform: translate(10px, 60vh);
+  }
+  100% {
+    transform: translateY(100vh);
     opacity: 1;
   }
 }
@@ -67,6 +122,32 @@
 
 .page:nth-of-type(3) {
   position: relative;
+}
+
+/* indicator */
+.index-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  width: 100px;
+  height: 100vh;
+  z-index: 100;
+}
+.index {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  padding: 16px;
+}
+.index-icon {
+  margin: auto;
+  width: 24px;
+  height: 24px;
+  fill: var(--theme-light-orange);
+}
+.index-icon.active {
+  fill: var(--theme-orange);
 }
 
 /* logo */
@@ -136,36 +217,37 @@
   right: 50vw;
 }
 
-/* index */
-.index-section {
-  position: fixed;
-  width: 100px;
-  line-height: 90vh;
+.section {
+  width: 50%;
   height: 100vh;
-  z-index: 100;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
-.index {
-  width: 24px;
-  height: 24px;
-  padding: 10px;
-  margin: auto;
-}
-.index-icon {
-  width: 100%;
-  height: 100%;
-  fill: var(--theme-light-orange);
-}
-.index-icon.active {
-  fill: var(--theme-orange);
+.section:nth-of-type(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
 }
 
 /* 체크리스트 */
+.background {
+  background-image: url('/src/image/memo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: fill;
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  width: 50%;
+  height: 100vh;
+  position: absolute;
+}
 .checklist {
   width: 400px;
-  height: 400px;
   background-color: var(--theme-light-orange);
   border: #000 solid 8px;
-  margin: 100px;
+  margin: auto;
+  z-index: 100;
 }
 .checklist-item {
   display: flex;
@@ -180,6 +262,87 @@
 }
 .check-icon.checked {
   stroke: #000;
+}
+
+.section .items {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+}
+.items * {
+  z-index: 100;
+  margin: auto;
+}
+.items:nth-of-type(2) img {
+  margin-left: 80px;
+  animation: shake-text 1s ease-in-out infinite;
+}
+
+.confetti-section {
+  position: absolute;
+}
+.confetti {
+  opacity: 0;
+}
+.confetti:nth-of-type(1) {
+  animation: fall-down-right 6s linear infinite;
+  transform: rotate(-180deg);
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.confetti:nth-of-type(2) {
+  animation: fall-down-right 8s linear infinite;
+  transform: rotate(180deg);
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.confetti:nth-of-type(3) {
+  transform: rotate(80deg);
+  animation: fall-down-left 8s linear infinite;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.confetti:nth-of-type(4) {
+  transform: rotate(90deg);
+  animation: fall-left-right 8s linear infinite;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+.confetti:nth-of-type(5) {
+  transform: rotate(90deg);
+  animation: fall-down-left 8s linear infinite;
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+}
+.confetti:nth-of-type(6) {
+  animation: fall-down-left 8s linear infinite;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.confetti:nth-of-type(7) {
+  animation: fall-down-left 8s linear infinite;
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
+}
+.confetti:nth-of-type(8) {
+  transform: rotate(90deg);
+  animation: fall-down-right 8s linear infinite;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.confetti:nth-of-type(9) {
+  animation: fall-left-right 7s linear infinite;
+  -webkit-animation-delay: 9s;
+  animation-delay: 9s;
+}
+
+.image-comment {
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .member {
