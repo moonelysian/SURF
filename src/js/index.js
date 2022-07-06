@@ -1,6 +1,8 @@
 import '../css/init.css';
 import '../css/variables.css';
 import '../css/style.css';
+import '../css/starwars.css';
+import ScrollMagic from 'scrollmagic';
 
 const pageHight = document.querySelector('.page').clientHeight;
 const triggerSize = pageHight - 5;
@@ -8,6 +10,7 @@ const pageIndicator = document.getElementsByClassName('index-icon');
 const indicatorSection = document.querySelector('.index-section');
 const logoSection = document.querySelector('.logo-section');
 const checklist = document.querySelector('.checklist');
+const spyElements = document.querySelectorAll('.scroll-spy');
 
 let startPoint = 0;
 
@@ -19,7 +22,6 @@ const handleScroll = currentScrollY => {
 };
 
 const handleClick = dataset => {
-  console.log(startPoint, dataset);
   if (!dataset) {
     return;
   }
@@ -65,3 +67,12 @@ indicatorSection.addEventListener('click', event => {
 });
 logoSection.addEventListener('click', handleLogo);
 checklist.addEventListener('click', e => handleChecklist(e.target));
+
+spyElements.forEach(function (spyEl) {
+  new ScrollMagic.Scene({
+    triggerElement: spyEl,
+    triggerHook: 0.8,
+  })
+    .setClassToggle(spyEl, 'star-wars-intro') // 요소가 화면에 보이면 show 클래스 추가
+    .addTo(new ScrollMagic.Controller()); // 컨트롤러에 장면을 할당(필수!)
+});
